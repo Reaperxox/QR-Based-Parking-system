@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Parking</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="./style.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- jQuery timepicker library -->
+<link rel="stylesheet" href="jquery-timepicker/jquery.timepicker.min.css">
+<script type="text/javascript" src="jquery-timepicker/jquery.timepicker.min.js"></script>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
+
+
+
+    </head>
+<body>
+<main>
+	<form id="bform" action="" onsubmit="return validateform()">
+<label for="userId">User ID</label>
+                    <input type="text" name="userId" id="userId" required>
+		
+
+	<br/>
+
+		<label for="park">Choose a time for your parking:</label>
+
+		<input type="text" id="parkstart" class="timepicker"  required>
+
+TO
+		<br/>
+	<input type="text" id="parkend" class="timepicker1" name="parkend" required>
+
+
+		<label>Parking hours are 7am to 11pm</label>
+
+
+
+
+
+	<button id="Book" class="btn waves-effect waves-light" type="submit" >BOOK</button>
+
+
+
+</form>
+</main>
+
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+<script>
+
+
+// Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB5PfIvDZ-O4g8RLUcBIr84gf3nshZ_wP4",
+    authDomain: "parking-e5259.firebaseapp.com",
+    databaseURL: "https://parking-e5259.firebaseio.com",
+    projectId: "parking-e5259",
+    storageBucket: "parking-e5259.appspot.com",
+    messagingSenderId: "918138331568",
+    appId: "1:918138331568:web:812df79e8c27bab335b675",
+    measurementId: "G-3G7X43FJ2R"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+</script>
+
+
+<script>
+$('.timepicker').timepicker({
+    timeFormat: 'h:mm p',
+    interval: 60,
+    minTime: '7:00am',
+    maxTime: '10:00pm',
+    defaultTime: '10',
+    startTime: '10:00',
+    dynamic: false,
+    dropdown: true,
+    scrollbar: true
+});
+ 
+$('.timepicker1').timepicker({
+    timeFormat: 'h:mm p',
+    interval: 60,
+    minTime: '8:00am',
+    maxTime: '11:00pm',
+    defaultTime: '11',
+    startTime: '10:00',
+    dynamic: false,
+    dropdown: true,
+    scrollbar: true
+});
+ </script>
+
+
+<script>
+localStorage.setItem("ui",document.getElementById('userId').value);
+</script>
+
+<script src="./booktimeslot.js"></script>   
+
+
+
+
+</body>
+</html>
+

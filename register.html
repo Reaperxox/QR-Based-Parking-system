@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=0.5">
+        <title>User Registration</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Bree+Serif|Convergence' rel='stylesheet'>
+        <link rel="stylesheet" href="./style.css">
+
+    </head>
+    <body>
+            <main>
+				<h3>Welcome to the PMS</h3>
+			<!--<img src="https://hiphensolutions.com/wp-content/uploads/2015/11/rfid-parking-management-system-6.jpg" alt="pms" style="width:120px;height:120px;"> -->
+				<form id="register" action="">
+					<fieldset>
+					<legend>Registration Form</legend>
+					<table>
+						<tr>
+							<td class="text">User ID :</td>
+							<td><input type="text" name="userId" id="userId"></td>
+						</tr>
+						<tr>
+							<td class="text">FirstName :</td>
+							<td><input type="text" name="firstName" id="firstName"></td>
+						</tr>
+						<tr>
+							<td class="text">Lastname :</td>
+							<td><input type="text" name="lastName" id='lastName'></td>
+						</tr>
+						<tr>
+							<td class="text">Mobile Number :</td>
+							<td><input type="number" name="mob" id='mob'></td>
+						</tr>
+						<tr>
+							<td class="text">Age :</td>
+							<td><input type="number" name="age" id="age"></td>
+						</tr>
+						<tr>
+							<td class="text">Password :</td>
+							<td><input type="password" name="pwd" id="pwd"></td>
+						</tr>
+						<tr>
+							<td class="text">Retype Password :</td>
+							<td><input type="password" name="repwd" id="repwd"></td>
+							<td><p id="hid">Password Matched!</p></td>
+						</tr>
+						<tr>
+							<td><button id="addBtn" class="btn waves-effect waves-light">Add</button></td>
+							<td><button id="resetBtn" class="btn waves-effect red darken-1" onclick="reset()">Reset</button></td>
+						</tr>
+					</table>
+					</fieldset>
+                </form>
+            </main>
+            <div id="qrcode"></div>
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+  apiKey: "AIzaSyB5PfIvDZ-O4g8RLUcBIr84gf3nshZ_wP4",
+  authDomain: "parking-e5259.firebaseapp.com",
+  databaseURL: "https://parking-e5259.firebaseio.com",
+  projectId: "parking-e5259",
+  storageBucket: "parking-e5259.appspot.com",
+  messagingSenderId: "918138331568",
+  appId: "1:918138331568:web:812df79e8c27bab335b675",
+  measurementId: "G-3G7X43FJ2R"
+};
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="./register.js"></script>
+            <!--<script src="qrcode.min.js"></script>-->
+    </body>
+</html>

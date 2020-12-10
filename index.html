@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=0.5">
+        <title>Login to PMS</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Bree+Serif|Convergence' rel='stylesheet'>
+        <link rel="stylesheet" href="./style.css">
+
+    </head>
+    <body>
+            <main>
+				<h2>Welcome to the PMS</h2>
+			<!--<img src="https://hiphensolutions.com/wp-content/uploads/2015/11/rfid-parking-management-system-6.jpg" alt="pms" style="width:120px;height:120px;"> -->
+				<form id="login" action="./newpage.html">
+					<fieldset>
+					<legend>Login</legend>
+					<table>
+						<tr>
+							<td class="text">User ID :</td>
+							<td><input type="text" name="userId" id="userId"></td>
+						</tr>
+						<tr>
+							<td class="text">Password :</td>
+							<td><input type="password" name="pwd" id="pwd"></td>
+							<td><p id="hid">Wrong Password!</p></td>
+						</tr>
+						<tr>
+							<td><button id="log" class="btn waves-effect waves-light">Login</button></td>
+							<td><button id="resetBtn" class="btn waves-effect red darken-1" onclick="reset()">Reset</button></td>
+						</tr>
+						<br/>
+						<tr>
+							<td><b>New User?</b> <a class="reg" href="./register.html">Sign Up here!</a></td>
+						</tr>
+						<tr>
+							<td><a class="up" href="./update.html">Update Existing User</a></td>
+							<td><a class="del" href="./delete.html">Delete User</a></td
+						</tr>
+					</table>
+					</fieldset>
+                </form>
+            </main>
+			<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+				https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+		<script>
+			// Your web app's Firebase configuration
+			const firebaseConfig = {
+				apiKey: "AIzaSyB5PfIvDZ-O4g8RLUcBIr84gf3nshZ_wP4",
+				authDomain: "parking-e5259.firebaseapp.com",
+				databaseURL: "https://parking-e5259.firebaseio.com",
+				projectId: "parking-e5259",
+				storageBucket: "parking-e5259.appspot.com",
+				messagingSenderId: "918138331568",
+				appId: "1:918138331568:web:812df79e8c27bab335b675",
+				measurementId: "G-3G7X43FJ2R"
+			};
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+		</script>
+		<script src="./login.js"></script>
+    </body>
+</html>
